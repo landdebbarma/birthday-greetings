@@ -1373,8 +1373,6 @@ audio {
         padding: 12px 20px !important;
         border-radius: 25px !important;
         box-shadow: 0 4px 15px rgba(70, 107, 175, 0.4) !important;
-        margin: 0 auto !important;
-        display: block !important;
     }
     
     /* Responsive balloons styling */
