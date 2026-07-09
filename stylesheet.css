@@ -1302,9 +1302,91 @@ audio {
 
 
 
-    /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
-    	}
-    }*/
+/* Responsive Design for Mobile Devices */
+@media only screen and (max-width: 767px) {
+    /* Prevent overflow issues */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Adjust container padding */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+    
+    /* Scale down bulbs for mobile screen fitting */
+    .bulb-holder {
+        height: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .bulb {
+        width: 35px;
+        height: 35px;
+        background-size: 35px 35px;
+    }
+    
+    /* Adjust banner padding/sizing */
+    .bannar {
+        margin-top: 10px;
+        max-width: 90%;
+    }
+    
+    /* Scale down the cake container dynamically */
+    .cake-cover {
+        margin-top: 20px;
+        height: 220px; /* Prevent layout collapse */
+    }
+    .cake {
+        transform: scale(0.7) !important;
+        transform-origin: top center !important;
+        left: 50%;
+        margin-left: -150px !important; /* Diameter is 300px, so 300/2 = 150 */
+    }
+    
+    /* Responsive message layout and text size */
+    .message {
+        margin-top: 60px;
+        padding: 0 15px;
+        margin-bottom: 120px; /* Space for fixed bottom navbar */
+    }
+    .message p {
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+        text-shadow: 1px 1px 1px #FFF !important;
+    }
+    
+    /* Floating action buttons style optimization for touch targets */
+    .navbar-fixed-bottom {
+        background: rgba(0, 0, 0, 0.7) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        padding: 12px 10px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    .btn-primary {
+        width: 100% !important;
+        max-width: 280px !important;
+        font-size: 15px !important;
+        padding: 12px 20px !important;
+        border-radius: 25px !important;
+        box-shadow: 0 4px 15px rgba(70, 107, 175, 0.4) !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    /* Responsive balloons styling */
+    .balloons {
+        width: 60px !important;
+        height: 110px !important;
+        background-size: 60px 110px !important;
+        bottom: -150px !important;
+    }
+    .balloons h2 {
+        font-size: 22px !important;
+        margin-top: 15px !important;
+        text-shadow: 2px 2px 2px #FFF !important;
+    }
+}
