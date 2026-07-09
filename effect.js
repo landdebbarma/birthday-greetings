@@ -10,14 +10,12 @@ $('document').ready(function(){
 			 var spacing = isMobile ? 45 : 100;
 			 var offset = isMobile ? 22 : 50;
 			 var topPos = isMobile ? 140 : 240;
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-			$('#b11').animate({top:topPos, left: vw - 3*spacing - offset},500);
-			$('#b22').animate({top:topPos, left: vw - 2*spacing - offset},500);
-			$('#b33').animate({top:topPos, left: vw - spacing - offset},500);
-			$('#b44').animate({top:topPos, left: vw - offset},500);
-			$('#b55').animate({top:topPos, left: vw + spacing - offset},500);
-			$('#b66').animate({top:topPos, left: vw + 2*spacing - offset},500);
-			$('#b77').animate({top:topPos, left: vw + 3*spacing - offset},500);
+			$('#b1,#b2,#b3,#b4,#b5').stop();
+			$('#b11').animate({top:topPos, left: vw - 2*spacing - offset},500);
+			$('#b22').animate({top:topPos, left: vw - spacing - offset},500);
+			$('#b33').animate({top:topPos, left: vw - offset},500);
+			$('#b44').animate({top:topPos, left: vw + spacing - offset},500);
+			$('#b55').animate({top:topPos, left: vw + 2*spacing - offset},500);
 		});
 
 	$('#turn_on').click(function(){
@@ -96,39 +94,15 @@ $('document').ready(function(){
 		});
 	}
 
-	function loopSix() {
-		var isMobile = $(window).width() < 768;
-		var randleft = ($(window).width() - (isMobile ? 60 : 100)) * Math.random();
-		var randtop = ($(window).height() - (isMobile ? 120 : 180)) * Math.random();
-		$('#b6').animate({left:randleft,bottom:randtop},10000,function(){
-			loopSix();
-		});
-	}
-	function loopSeven() {
-		var isMobile = $(window).width() < 768;
-		var randleft = ($(window).width() - (isMobile ? 60 : 100)) * Math.random();
-		var randtop = ($(window).height() - (isMobile ? 120 : 180)) * Math.random();
-		$('#b7').animate({left:randleft,bottom:randtop},10000,function(){
-			loopSeven();
-		});
-	}
-
 	$('#balloons_flying').click(function(){
 		$('.balloon-border').animate({top:-500},8000);
-		$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
-		$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
-		// $('#b3').addClass('balloons-rotate-behaviour-two');
-		// $('#b4').addClass('balloons-rotate-behaviour-one');
-		// $('#b5').addClass('balloons-rotate-behaviour-one');
-		// $('#b6').addClass('balloons-rotate-behaviour-two');
-		// $('#b7').addClass('balloons-rotate-behaviour-one');
+		$('#b1,#b3,#b5').addClass('balloons-rotate-behaviour-one');
+		$('#b2,#b4').addClass('balloons-rotate-behaviour-two');
 		loopOne();
 		loopTwo();
 		loopThree();
 		loopFour();
 		loopFive();
-		loopSix();
-		loopSeven();
 		
 		$(this).fadeOut('slow').delay(5000).promise().done(function(){
 			$('#cake_fadein').fadeIn('slow');
@@ -157,21 +131,17 @@ $('document').ready(function(){
 		 var offset = isMobile ? 22 : 50;
 		 var topPos = isMobile ? 140 : 240;
 
-		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+		$('#b1,#b2,#b3,#b4,#b5').stop();
 		$('#b1').attr('id','b11');
 		$('#b2').attr('id','b22')
 		$('#b3').attr('id','b33')
 		$('#b4').attr('id','b44')
 		$('#b5').attr('id','b55')
-		$('#b6').attr('id','b66')
-		$('#b7').attr('id','b77')
-		$('#b11').animate({top:topPos, left: vw - 3*spacing - offset},500);
-		$('#b22').animate({top:topPos, left: vw - 2*spacing - offset},500);
-		$('#b33').animate({top:topPos, left: vw - spacing - offset},500);
-		$('#b44').animate({top:topPos, left: vw - offset},500);
-		$('#b55').animate({top:topPos, left: vw + spacing - offset},500);
-		$('#b66').animate({top:topPos, left: vw + 2*spacing - offset},500);
-		$('#b77').animate({top:topPos, left: vw + 3*spacing - offset},500);
+		$('#b11').animate({top:topPos, left: vw - 2*spacing - offset},500);
+		$('#b22').animate({top:topPos, left: vw - spacing - offset},500);
+		$('#b33').animate({top:topPos, left: vw - offset},500);
+		$('#b44').animate({top:topPos, left: vw + spacing - offset},500);
+		$('#b55').animate({top:topPos, left: vw + 2*spacing - offset},500);
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(3000);
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
